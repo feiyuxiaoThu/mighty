@@ -28,13 +28,12 @@ MIGHTY has been tested on both Docker and native installations on Ubuntu 22.04 w
       ```bash
       make run
       ```
-5. **(Optional) If you want to run the sim in dynamic environment:**
-    - comment out `python3 src/dynus/launch/run_single_sim.py --env hard_forest` in mighty.sh
-    - uncomment `python3 src/dynus/launch/run_single_sim.py --env dynamic_forest` in mighty.sh
-    - run 
-      ```bash
-      make run
-      ```
+      
+5. **(Optional) If you want to develop inside Docker:**
+    - Comment out the last line `ENTRYPOINT ["/mighty.sh"]` in `mighty/docker/Dockerfile` and run:
+   ```bash
+   make run
+   ```
 
 ### How to change environment
 

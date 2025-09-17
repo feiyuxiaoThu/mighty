@@ -143,4 +143,4 @@ RUN echo 'alias tks="tmux kill-server"' >> ~/.bashrc
 WORKDIR /home/kkondo/code/mighty_ws/src/mighty/docker
 COPY ./mighty.sh /home/kkondo/code/mighty_ws/src/mighty/docker/
 RUN chmod +x /mighty.sh
-# ENTRYPOINT ["/mighty.sh"]
+ENTRYPOINT ["/mighty.sh"]
