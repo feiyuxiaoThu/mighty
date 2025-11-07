@@ -15,7 +15,7 @@ RUN apt update
 RUN apt upgrade -y
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -q -y --no-install-recommends git tmux vim wget tmuxp make
+RUN apt-get install -q -y --no-install-recommends git tmux vim wget tmuxp make gdb
 
 # Making directories and setting up the environment
 ##########################################
@@ -50,7 +50,7 @@ RUN mkdir -p /home/kkondo/code/mighty_ws/src
 WORKDIR /home/kkondo/code/mighty_ws/src
 # dummy arg to invalidate cache and build from here
 ARG DUMMY=unknown
-RUN DUMMY=${DUMMY} https://github.com/mit-acl/mighty.git
+RUN DUMMY=${DUMMY} git clone https://github.com/mit-acl/mighty.git
 WORKDIR /home/kkondo/code/mighty_ws/src/mighty
 RUN git switch dev
 WORKDIR /home/kkondo/code/mighty_ws/src
