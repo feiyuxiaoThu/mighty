@@ -18,6 +18,8 @@
 | ------------------------- | ------------------------- |
 <a target="_blank" href="https://youtu.be/SI8YbMS-wyw"><img src="./imgs/mighty_gifs_hw_dynamic_1.gif" width="350" height="193" alt="Hardware Dynamic Env 1"></a> | <a target="_blank" href="https://youtu.be/SI8YbMS-wyw"><img src="./imgs/mighty_gifs_hw_dynamic_2.gif" width="350" height="193" alt="Hardware Dynamic Env 2"></a>
 
+## Paper
+
 ## General Setup
 
 MIGHTY has been tested on both Docker and native installations on Ubuntu 22.04 with ROS 2 Humble.
@@ -37,9 +39,10 @@ MIGHTY has been tested on both Docker and native installations on Ubuntu 22.04 w
 
 3. **BUILD:**
     - Navigate to the docker folder in your mighty repo (eg. `cd ~/code/ws/src/mighty/docker/`) and run this
-    - ```bash
+      ```bash
       make build
       ```
+
 4. **Run Simulation**
     - Run the following command to start the simulation:
       ```bash
@@ -82,12 +85,11 @@ MIGHTY has been tested on both Docker and native installations on Ubuntu 22.04 w
    ```
    This script will first install ROS 2 Humble, then MIGHTY and its dependencies. Please note that this script modifies your `~/.bashrc` file.
 
-### Run the Simulation
-
-Change the /path/to/install/ to your actual install path (eg. `./src/mighty/launch/run_mighty.sh /home/kkondo/code/ws/install/setup.bash`)
-```bash
-./src/mighty/launch/run_mighty.sh /path/to/install/setup.bash
-```
+ 3. **Run the Simulation**
+    Change the /path/to/install/ to your actual install path (eg. `./src/mighty/launch/run_mighty.sh /home/kkondo/code/ws/install/setup.bash`)
+    ```bash
+    ./src/mighty/launch/run_mighty.sh /path/to/install/setup.bash
+    ```
 
 ### Notes
 

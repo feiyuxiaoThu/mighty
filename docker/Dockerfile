@@ -91,8 +91,7 @@ RUN . /opt/ros/humble/setup.sh && ./build.sh humble
 WORKDIR /home/kkondo/code/mighty_ws
 RUN . /opt/ros/humble/setup.sh && \
     . /home/kkondo/code/decomp_ws/install/setup.sh && \
-    export CMAKE_PREFIX_PATH=/home/kkondo/code/livox_ws/install/livox_ros_driver2:/home/kkondo/code/decomp_ws/install/decomp_util && \
-    colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
+    export CMAKE_PREFIX_PATH=/home/kkondo/code/livox_ws/install/livox_ros_driver2:/home/kkondo/code/decomp_ws/install/decomp_util && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 # Gazebo
 ##########################################
