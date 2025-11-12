@@ -26,12 +26,16 @@ The full video is available [https://youtu.be/2KNR2eF0PEE](https://youtu.be/2KNR
 
 ## Interactive Demo
 
-If you are interested in an interactive demo of MIGHTY, please switch to the `interactive_demo` branch:
+If you are interested in an interactive demo of MIGHTY, please switch to the `interactive_demo` branch [https://github.com/mit-acl/mighty/tree/interactive_demo] by running:
 
 ```bash
 git checkout interactive_demo
 ```
 and follow the setup instructions in the README of that branch.
+
+## Fork
+
+Since you might want to use interactive demos, when you fork this repository, please make sure to also include the `interactive_demo` branch by unselecting the "Copy the main branch only" option.
 
 ## Setup
 
