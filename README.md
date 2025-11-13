@@ -4,25 +4,25 @@
 
 | **Trajectory** | **Forest** |
 | ------------------------- | ------------------------- |
-<a target="_blank" href="https://youtu.be/2KNR2eF0PEE"><img src="./imgs/mighty_gifs_complex_benchmarks.gif" width="350" height="193" alt="Complex Benchmarks"></a> | <a target="_blank" href="https://youtu.be/2KNR2eF0PEE"><img src="./imgs/mighty_gifs_hard_forest.gif" width="350" height="193" alt="Static Forest"></a> |
+<a target="_blank" href="https://youtu.be/Pvb-VPUdLvg"><img src="./imgs/mighty_gifs_complex_benchmarks.gif" width="350" height="193" alt="Complex Benchmarks"></a> | <a target="_blank" href="https://youtu.be/Pvb-VPUdLvg"><img src="./imgs/mighty_gifs_hard_forest.gif" width="350" height="193" alt="Static Forest"></a> |
 
 | **Dynamic Obstacles** | **Long Flight** |
 | ------------------------- | ------------------------- |
-<a target="_blank" href="https://youtu.be/2KNR2eF0PEE"><img src="./imgs/mighty_gifs_dynamic_sim.gif" width="350" height="193" alt="Dynamic Obstacles"></a> | <a target="_blank" href="https://youtu.be/2KNR2eF0PEE"><img src="./imgs/mighty_gifs_hw_long_flight.gif" width="350" height="193" alt="Hardware Long Flight"></a>
+<a target="_blank" href="https://youtu.be/Pvb-VPUdLvg"><img src="./imgs/mighty_gifs_dynamic_sim.gif" width="350" height="193" alt="Dynamic Obstacles"></a> | <a target="_blank" href="https://youtu.be/Pvb-VPUdLvg"><img src="./imgs/mighty_gifs_hw_long_flight.gif" width="350" height="193" alt="Hardware Long Flight"></a>
 
 | **Fast Flight 1** | **Fast Flight 2** |
 | ------------------------- | ------------------------- |
-<a target="_blank" href="https://youtu.be/2KNR2eF0PEE"><img src="./imgs/mighty_gifs_hw_fast_flight_1.gif" width="350" height="193" alt="Hardware Fast Flight 1"></a> | <a target="_blank" href="https://youtu.be/2KNR2eF0PEE"><img src="./imgs/mighty_gifs_hw_fast_flight_2.gif" width="350" height="193" alt="Hardware Fast Flight 2"></a>
+<a target="_blank" href="https://youtu.be/Pvb-VPUdLvg"><img src="./imgs/mighty_gifs_hw_fast_flight_1.gif" width="350" height="193" alt="Hardware Fast Flight 1"></a> | <a target="_blank" href="https://youtu.be/Pvb-VPUdLvg"><img src="./imgs/mighty_gifs_hw_fast_flight_2.gif" width="350" height="193" alt="Hardware Fast Flight 2"></a>
 
 | **Dynamic Env 1** | **Dynamic Env 2** |
 | ------------------------- | ------------------------- |
-<a target="_blank" href="https://youtu.be/2KNR2eF0PEE"><img src="./imgs/mighty_gifs_hw_dynamic_1.gif" width="350" height="193" alt="Hardware Dynamic Env 1"></a> | <a target="_blank" href="https://youtu.be/2KNR2eF0PEE"><img src="./imgs/mighty_gifs_hw_dynamic_2.gif" width="350" height="193" alt="Hardware Dynamic Env 2"></a>
+<a target="_blank" href="https://youtu.be/Pvb-VPUdLvg"><img src="./imgs/mighty_gifs_hw_dynamic_1.gif" width="350" height="193" alt="Hardware Dynamic Env 1"></a> | <a target="_blank" href="https://youtu.be/Pvb-VPUdLvg"><img src="./imgs/mighty_gifs_hw_dynamic_2.gif" width="350" height="193" alt="Hardware Dynamic Env 2"></a>
 
 ## Paper
 
 ## Video
 
-The full video is available [https://youtu.be/2KNR2eF0PEE](https://youtu.be/2KNR2eF0PEE).
+The full video is available [https://youtu.be/Pvb-VPUdLvg](https://youtu.be/Pvb-VPUdLvg).
 
 ## Interactive Demo
 
