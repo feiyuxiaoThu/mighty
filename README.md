@@ -2,7 +2,7 @@
 
 If you like this project, please consider starring ⭐ the repo!
 
-<a target="_blank" href="https://youtu.be/Pvb-VPUdLvg"><img src="./imgs/mighty_click_example.gif" width="700" height="386" alt="Complex Benchmarks"></a>
+<a target="_blank" href="https://youtu.be/Pvb-VPUdLvg"><img src="./imgs/mighty_click_example.gif" width="720" height="480" alt="Complex Benchmarks"></a>
 
 This is a revised version for benchmarking based on Kumar Lab's repo (https://github.com/yuwei-wu/GCOPTER.git), which implements the GCOPTER algorithm (See the "About GCOPTER" section below for more details). 
 
