@@ -1,10 +1,26 @@
 # MIGHTY Interactive Demo
 
+If you like this project, please consider starring ⭐ the repo!
+
 <a target="_blank" href="https://youtu.be/Pvb-VPUdLvg"><img src="./imgs/mighty_click_example.gif" width="700" height="386" alt="Complex Benchmarks"></a>
 
 This is a revised version for benchmarking based on Kumar Lab's repo (https://github.com/yuwei-wu/GCOPTER.git), which implements the GCOPTER algorithm (See the "About GCOPTER" section below for more details). 
 
 ## Paper
+
+MIGHTY: Hermite Spline-based Efficient Trajectory Planning is available [https://arxiv.org/abs/2511.10822](https://arxiv.org/abs/2511.10822)!
+
+```bibtex
+@article{kondo2025mighty,
+      title={MIGHTY: Hermite Spline-based Efficient Trajectory Planning}, 
+      author={Kota Kondo and Yuwei Wu and Vijay Kumar and Jonathan P. How},
+      year={2025},
+      eprint={2511.10822},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2511.10822}, 
+}
+```
 
 ## Video
 
