@@ -8,37 +8,14 @@ LABEL Maintainer="Kota Kondo <kkondo@mit.edu>" \
 ENV ROS_DISTRO=humble
 ENV DEBIAN_FRONTEND=noninteractive
 
-# ==========================================
-# 1. 替换国内源 (China Mirrors)
-# ==========================================
-# 备份原有源
-RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
-
-# 替换 Ubuntu 源为清华源 (Tsinghua Mirror)
-RUN sed -i 's@//.*archive.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list \
-    && sed -i 's@//ports.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list \
-    && sed -i 's@//security.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list
-
-# 替换 ROS2 源为清华源 (Tsinghua Mirror)
-RUN if [ -f /etc/apt/sources.list.d/ros2-latest.list ]; then \
-        sed -i 's@http://packages.ros.org@https://mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/ros2-latest.list; \
-    fi
-
-# Update and Install basics
+# Usuals
 ##########################################
-RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -q -y --no-install-recommends \
-    git \
-    tmux \
-    vim \
-    wget \
-    tmuxp \
-    make \
-    gdb \
-    curl \
-    gnupg2 \
-    lsb-release \
-    && rm -rf /var/lib/apt/lists/*
+RUN rm -rf /var/lib/apt/lists/*
+RUN apt update
+RUN apt upgrade -y
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install -q -y --no-install-recommends git tmux vim wget tmuxp make gdb
 
 # Making directories and setting up the environment
 ##########################################
@@ -47,8 +24,7 @@ RUN mkdir code
 
 # Install dependencies
 ##########################################
-RUN apt-get update && apt-get install -y --no-install-recommends \
-                        ros-${ROS_DISTRO}-gazebo-* \
+RUN apt-get install -y  ros-${ROS_DISTRO}-gazebo-* \
                         ros-${ROS_DISTRO}-pcl-conversions \
                         ros-${ROS_DISTRO}-example-interfaces \
                         ros-${ROS_DISTRO}-pcl-ros \
@@ -56,29 +32,24 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
                         ros-${ROS_DISTRO}-rqt-gui \
                         ros-${ROS_DISTRO}-rqt-gui-py \
                         ros-${ROS_DISTRO}-tf2-tools \
-                        ros-${ROS_DISTRO}-tf-transformations \
-                        && rm -rf /var/lib/apt/lists/*
+                        ros-${ROS_DISTRO}-tf-transformations
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-                        ros-${ROS_DISTRO}-desktop \
+RUN apt install -y  ros-${ROS_DISTRO}-desktop \
                         ros-dev-tools \
                         ros-${ROS_DISTRO}-turtlesim \
                         ros-${ROS_DISTRO}-rqt* \
-                        ros-${ROS_DISTRO}-rviz-common \
+                        ros-${ROS_DISTRO}-rviz2 \
+                        ros-${ROS_DISTRO}-rviz-common \ 
                         libpcl-dev \
                         build-essential \
-                        nlohmann-json3-dev \
-                        && rm -rf /var/lib/apt/lists/*
+                        nlohmann-json3-dev
 
 # Install MIGHTY and dependencies
 ##########################################
 RUN mkdir -p /home/kkondo/code/mighty_ws/src
 WORKDIR /home/kkondo/code/mighty_ws/src
-
 # dummy arg to invalidate cache and build from here
 ARG DUMMY=unknown
-
-# === 修改：直接 Clone GitHub，不使用代理 ===
 RUN DUMMY=${DUMMY} git clone https://github.com/mit-acl/mighty.git
 WORKDIR /home/kkondo/code/mighty_ws/src/mighty
 RUN git switch dev
@@ -103,7 +74,6 @@ RUN git clone https://github.com/Livox-SDK/Livox-SDK2.git
 ##########################################
 ### for decomp
 WORKDIR /home/kkondo/code/decomp_ws
-# 注意：colcon build 可能需要联网下载 python 依赖
 RUN . /opt/ros/humble/setup.sh && colcon build --packages-select decomp_util
 RUN . /home/kkondo/code/decomp_ws/install/setup.sh && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 
@@ -111,8 +81,7 @@ RUN . /home/kkondo/code/decomp_ws/install/setup.sh && colcon build --cmake-args 
 WORKDIR /home/kkondo/code/Livox-SDK2
 RUN mkdir build
 WORKDIR /home/kkondo/code/Livox-SDK2/build
-# 移除 sudo，Docker 默认就是 root
-RUN cmake .. && make -j && make install
+RUN cmake .. && make -j && sudo make install
 
 ### for livox_ros_driver2
 WORKDIR /home/kkondo/code/livox_ws/src/livox_ros_driver2
@@ -133,9 +102,7 @@ RUN echo    'pcm.!default { \
             }' >> /usr/share/alsa/alsa.conf
 
 # For livox lidar
-# 修复警告：显式指定默认值或者不引用未定义的变量。
-# 这里通常 LD_LIBRARY_PATH 在基础镜像可能为空，稳妥写法如下：
-ENV LD_LIBRARY_PATH=/home/kkondo/code/livox_ws/install/livox_ros_driver2/lib:/usr/local/lib:/usr/local/include:${LD_LIBRARY_PATH}
+ENV LD_LIBRARY_PATH=/home/kkondo/code/livox_ws/install/livox_ros_driver2/lib:${LD_LIBRARY_PATH}:/usr/local/lib:/usr/local/include
 
 # Alias
 RUN echo 'alias tks="tmux kill-server"' >> ~/.bashrc
